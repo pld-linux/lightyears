@@ -1,0 +1,41 @@
+diff -dur -x '*~' LightYears.orig/code/config.py LightYears/code/config.py
+--- LightYears.orig/code/config.py	2006-03-31 21:11:15.000000000 +0200
++++ LightYears/code/config.py	2006-04-20 22:35:11.000000000 +0200
+@@ -4,6 +4,7 @@
+ # 
+ 
+ import pickle , startup
++import os
+ 
+ 
+ class Config:
+@@ -17,13 +18,15 @@
+ 
+ cfg = Config()
+ 
++DIR = "~/.LightYears"
+ FILENAME = "config.dat"
+ 
+ def Initialise():
+-    global cfg, FILENAME
++    global cfg, DIR, FILENAME
+ 
+     try:
+-        f = file(FILENAME, "rb")
++        dir = os.path.expanduser(DIR)
++        f = file(os.path.join(dir, FILENAME), "rb")
+         cfg2 = pickle.load(f)
+         f.close()
+         if ( cfg2.version == startup.Get_Game_Version() ):
+@@ -36,7 +39,10 @@
+     global cfg, FILENAME
+ 
+     try:
+-        f = file(FILENAME, "wb")
++        dir = os.path.expanduser(DIR)
++        if not os.path.exists(dir):
++            os.makedirs(dir)
++        f = file(os.path.join(dir, FILENAME), "wb")
+         pickle.dump(cfg, f)
+         f.close()
+     except Exception, x:
