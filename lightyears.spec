@@ -9,6 +9,7 @@ Group:		X11/Applications/Games
 Source0:	http://www.jwhitham.org.uk/biscuit_games/LightYears/%{name}-%{version}.zip
 # Source0-md5:	f82bb67d14153affc8d9a644cdb25d5b
 Source1:	%{name}.desktop
+Patch0:		%{name}-config_path.patch
 URL:		http://www.jwhitham.org.uk/biscuit_games/LightYears/
 %pyrequires_eq	python-modules
 Requires:	python-pygame >= 1.7
@@ -26,6 +27,7 @@ includes an interactive tutorial and a written manual.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
