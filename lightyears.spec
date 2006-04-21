@@ -1,6 +1,7 @@
 
 Summary:	20,000 Light Years Into Space - a real-time strategy game
-Summary(pl):	20,000 Light Years Into Space - gra strategiczna
+Summary(pl):	20,000 Light Years Into Space - strategia czasu
+rzeczywistego
 Name:		LightYears
 Version:	1.2
 Release:	1
@@ -24,6 +25,10 @@ During the game, players must focus on building a steam delivery
 network while under attack from various hazards. Once you have solved
 the three difficulty levels, you can attack the high score. The game
 includes an interactive tutorial and a written manual.
+
+%description -l pl
+"20,000 Light Years Into Space" to przeznaczona dla jednego gracza
+strategoa czasu rzeczywistego, z motywem science-fiction "Steampunk".
 
 %prep
 %setup -q -n %{name}
