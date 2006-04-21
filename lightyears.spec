@@ -1,7 +1,6 @@
 
 Summary:	20,000 Light Years Into Space - a real-time strategy game
-Summary(pl):	20,000 Light Years Into Space - strategia czasu
-rzeczywistego
+Summary(pl):	20,000 Light Years Into Space - strategia czasu rzeczywistego
 Name:		LightYears
 Version:	1.2
 Release:	1
