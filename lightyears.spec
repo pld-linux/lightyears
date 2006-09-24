@@ -1,16 +1,18 @@
 Summary:	20,000 Light Years Into Space - a real-time strategy game
 Summary(pl):	20,000 Light Years Into Space - strategia czasu rzeczywistego
 Name:		LightYears
-Version:	1.2
+Version:	1.2a
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Games
 Source0:	http://www.jwhitham.org.uk/biscuit_games/LightYears/%{name}-%{version}.zip
-# Source0-md5:	f82bb67d14153affc8d9a644cdb25d5b
+# Source0-md5:	b07bf041b3a735248440dd27cf70a3e6
 Source1:	%{name}.desktop
 Patch0:		%{name}-config_path.patch
 URL:		http://www.jwhitham.org.uk/biscuit_games/LightYears/
 %pyrequires_eq	python-modules
+BuildRequires:	rpm-pythonprov
+BuildRequires:	unzip
 Requires:	python-pygame >= 1.7
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
