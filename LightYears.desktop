@@ -1,11 +1,10 @@
 [Desktop Entry]
-Encoding=UTF-8
 Exec=LightYears
 Name=20,000 Light Years Into Space
 Name[pl]=20,000 Light Years Into Space
 Comment=Real time strategy Games
 Comment[pl]=Gra strategiczna w czasie rzeczywistym
-Icon=LightYears.png
+Icon=LightYears
 Terminal=false
 Type=Application
 Categories=Game;StrategyGame;
