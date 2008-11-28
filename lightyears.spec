@@ -15,6 +15,7 @@ BuildRequires:	rpm-pythonprov
 BuildRequires:	unzip
 Requires:	python-pygame >= 1.7
 BuildArch:	noarch
+Obsoletes:	LightYears
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
