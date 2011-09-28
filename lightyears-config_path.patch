@@ -1,38 +1,15 @@
---- LightYears.orig/code/config.py	2006-09-23 19:09:59.000000000 +0200
-+++ LightYears/code/config.py	2006-09-23 19:10:17.000000000 +0200
-@@ -17,10 +17,12 @@
+--- lightyears-1.4/code/config.py~	2011-09-28 13:04:54.113542424 +0200
++++ lightyears-1.4/code/config.py	2011-09-28 13:07:44.236836622 +0200
+@@ -20,10 +20,11 @@
  
  cfg = Config()
  
 +DIR = "~/.LightYears"
  FILENAME = None
  
- def Initialise():
+ def Initialise(delete_file):
 -    global cfg, FILENAME
 +    global cfg, DIR, FILENAME
-+
  
      home = extra.Get_Home()
      if ( home == None ):
-@@ -29,7 +31,8 @@
-         FILENAME = os.path.join(home, ".20k.cfg")
- 
-     try:
--        f = file(FILENAME, "rb")
-+	dir = os.path.expanduser(DIR)
-+	f = file(os.path.join(dir, FILENAME), "rb")
-         cfg2 = pickle.load(f)
-         f.close()
-         if ( cfg2.version == startup.Get_Game_Version() ):
-@@ -42,7 +45,10 @@
-     global cfg, FILENAME
- 
-     try:
--        f = file(FILENAME, "wb")
-+        dir = os.path.expanduser(DIR)
-+        if not os.path.exists(dir):
-+            os.makedirs(dir)
-+        f = file(os.path.join(dir, FILENAME), "wb")
-         pickle.dump(cfg, f)
-         f.close()
-     except Exception, x:
